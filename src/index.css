@@ -12,3 +12,7 @@ body {
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.vw-90 {
+    width: calc(100vw - 2rem);
+}
