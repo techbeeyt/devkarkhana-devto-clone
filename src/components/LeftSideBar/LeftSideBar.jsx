@@ -17,86 +17,92 @@ import SoftwareCompanies from '../../assets/svg/leftsidebar/SoftwareCompanies.sv
 
 const LeftSideBar = () => {
     return (
-        <div className="bg-white md:bg-transparent lg:bg-transparent px-4 shadow-md md:shadow-none lg:shadow-none min-h-full">
+        <div className={`bg-white md:bg-transparent lg:bg-transparent px-2 shadow-md md:shadow-none lg:shadow-none min-h-full`}>
             <div className="flex justify-between items-center md:hidden lg:hidden">
                 <h1 className="text-lg md:text-xl lg:text-xl font-bold py-4">DEV Community</h1>
-                <MdClose size={26}/>
+                <MdClose className={`closeButton`} size={26}/>
             </div>
             <ul className="py-2">
-                <li className="py-2 gap-2 hover:bg-indigo-200">
-                    <Link to="/" className="flex justify-start items-center ">
+                <li>
+                    <Link to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
                         <img src={HomeIcon} alt="home"/>
                         <span>Home</span>
                     </Link>
                 </li>
-                <div className="flex justify-start items-center py-2 gap-2">
-                    <img src={ReadingList} alt="ReadingList"/>
-                    <span>Reading List</span>
-                </div>
-                <div className="flex justify-start items-center py-2 gap-2">
-                    <img src={Listings} alt="Listings"/>
-                    <span>Listings</span>
-                </div>
-                <div className="flex justify-start items-center py-2 gap-2">
+                <li>
+                    <Link to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
+                        <img src={ReadingList} alt="ReadingList"/>
+                        <span>Reading List</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
+                        <img src={Listings} alt="Listings"/>
+                        <span>Listings</span>
+                    </Link>
+                </li>
+                <Link  to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
                     <img src={Podcasts} alt="Podcasts"/>
                     <span>Podcasts</span>
-                </div>
-                <div className="flex justify-start items-center py-2 gap-2">
+                </Link>
+                <Link  to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
                     <img src={Videos} alt="home"/>
                     <span>Videos</span>
-                </div>
-                <div className="flex justify-start items-center py-2 gap-2">
+                </Link>
+                <Link  to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
                     <img src={Tags} alt="home"/>
                     <span>Tags</span>
-                </div>
-                <div className="flex justify-start items-center py-2 gap-2">
+                </Link>
+                <Link  to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
                     <img src={icFAQ} alt="home"/>
                     <span>FAQ</span>
-                </div>
-                <div className="flex justify-start items-center py-2 gap-2">
+                </Link>
+                <Link to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
                     <img src={ForemShop} alt="forem-shop"/>
                     <span>Forem Shop</span>
-                </div>
-                <div className="flex justify-start items-center py-2 gap-2">
+                </Link>
+                <Link to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
                     <img src={Sponsors} alt="home"/>
                     <span>Sponsors</span>
-                </div>
-                <div className="flex justify-start items-center py-2 gap-2">
+                </Link>
+                <Link to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
                     <img src={About} alt="about"  height={20} width={20}/>
                     <span>About</span>
-                </div>
-                <div className="flex justify-start items-center py-2 gap-2">
+                </Link>
+                <Link to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
                     <img src={Contact} alt="contact"/>
                     <span>Contact</span>
-                </div>
-                <div className="flex justify-start items-center py-2 gap-2">
+                </Link>
+                <Link to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
                     <img src={Guides} alt="guides"  height={20} width={20} />
                     <span>Guides</span>
-                </div>
-                <div className="flex justify-start items-center py-2 gap-2">
+                </Link>
+                <Link  to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
                     <img src={SoftwareCompanies} alt="software-companies" height={20} width={20} />
                     <span>Software Companies</span>
-                </div>
+                </Link>
             </ul>
-
-            <div className="py-2">
-                <h1 className="font-bold text-gray-800">Other</h1>
-            </div>
-
-            <div>
-                <div className="flex justify-start items-center py-2 gap-2">
-                    <img src={Contact} alt="contact"/>
-                    <span>Code of Conduct</span>
-                </div>
-                <div className="flex justify-start items-center py-2 gap-2">
-                    <img src={Guides} alt="guides"  height={20} width={20} />
-                    <span>Privacy Policy</span>
-                </div>
-                <div className="flex justify-start items-center py-2 gap-2">
-                    <img src={SoftwareCompanies} alt="software-companies" height={20} width={20} />
-                    <span>Terms of Use</span>
-                </div>
-            </div>
+            <h1 className="font-bold mt-4">Other</h1>
+            <ul className="mb-4">
+                <li>
+                    <Link to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
+                        <img src={HomeIcon} alt="home"/>
+                        <span>Code of Conduct</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
+                        <img src={ReadingList} alt="ReadingList"/>
+                        <span>Privacy Policy</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
+                        <img src={Listings} alt="Listings"/>
+                        <span>Terms of Use</span>
+                    </Link>
+                </li>
+            </ul>
         </div>
     );
 };
