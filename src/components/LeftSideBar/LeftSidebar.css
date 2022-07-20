@@ -1,0 +1,8 @@
+.closeButton{
+    cursor: pointer !important;
+}
+
+.leftSidebarLink:hover{
+    text-decoration: underline !important;
+    color: blue;
+}
