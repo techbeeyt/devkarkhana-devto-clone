@@ -1,6 +1,7 @@
 export const posts = [{
         date: "jul-10-2022",
         userID: "1001",
+        username: "Jamil Sarker",
         postID: "p101",
         post_title: "How to get web development clients ???",
         post_body: "According to the reports, the web and mobile development industry is expected to grow faster than the average for all occupations at 9% CAGR (US Bureau of Labor Statistics).I’m working in this field for the last 6–7 years and also running the fastest software development and digital marketing company and generating more than $100k per year many of us are willing to do so, they are well skilled but they don’t know how to get clients? Getting clients from freelancing platforms is too hard as they are already overcrowded and over-rushed.",
@@ -45,6 +46,7 @@ export const posts = [{
     {
         date: "jul-10-2022",
         userID: "1003",
+        username: "Jibon Chowdhury",
         postID: "p102",
         post_title: "How to get web development clients ???",
         post_body: "According to the reports, the web and mobile development industry is expected to grow faster than the average for all occupations at 9% CAGR (US Bureau of Labor Statistics).I’m working in this field for the last 6–7 years and also running the fastest software development and digital marketing company and generating more than $100k per year many of us are willing to do so, they are well skilled but they don’t know how to get clients? Getting clients from freelancing platforms is too hard as they are already overcrowded and over-rushed.",
@@ -89,6 +91,7 @@ export const posts = [{
     {
         date: "jul-10-2022",
         userID: "1007",
+        username: "Montasir Mahmud",
         postID: "p103",
         post_title: "Hello, world!",
         post_body: "According to the reports, the web and mobile development industry is expected to grow faster than the average for all [Click This Link](www.google.com) occupations at 9% CAGR (US Bureau of Labor Statistics).I’m working in this field for the last 6–7 years and also running the fastest software development and digital marketing company and generating more than $100k per year many of us are willing to do so, they are well skilled but they don’t know how to get clients? Getting clients from freelancing platforms is too hard as they are already overcrowded and over-rushed.",

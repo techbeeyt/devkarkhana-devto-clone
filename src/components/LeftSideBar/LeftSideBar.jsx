@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MdClose } from 'react-icons/md';
 import HomeIcon from "../../assets/svg/leftsidebar/home.svg";
 import ReadingList from "../../assets/svg/leftsidebar/reading_list.svg";
@@ -21,11 +22,13 @@ const LeftSideBar = () => {
                 <h1 className="text-lg md:text-xl lg:text-xl font-bold py-4">DEV Community</h1>
                 <MdClose size={26}/>
             </div>
-            <div className="py-2">
-                <div className="flex justify-start items-center py-2 gap-2">
-                    <img src={HomeIcon} alt="home"/>
-                    <span>Home</span>
-                </div>
+            <ul className="py-2">
+                <li className="py-2 gap-2 hover:bg-indigo-200">
+                    <Link to="/" className="flex justify-start items-center ">
+                        <img src={HomeIcon} alt="home"/>
+                        <span>Home</span>
+                    </Link>
+                </li>
                 <div className="flex justify-start items-center py-2 gap-2">
                     <img src={ReadingList} alt="ReadingList"/>
                     <span>Reading List</span>
@@ -73,6 +76,25 @@ const LeftSideBar = () => {
                 <div className="flex justify-start items-center py-2 gap-2">
                     <img src={SoftwareCompanies} alt="software-companies" height={20} width={20} />
                     <span>Software Companies</span>
+                </div>
+            </ul>
+
+            <div className="py-2">
+                <h1 className="font-bold text-gray-800">Other</h1>
+            </div>
+
+            <div>
+                <div className="flex justify-start items-center py-2 gap-2">
+                    <img src={Contact} alt="contact"/>
+                    <span>Code of Conduct</span>
+                </div>
+                <div className="flex justify-start items-center py-2 gap-2">
+                    <img src={Guides} alt="guides"  height={20} width={20} />
+                    <span>Privacy Policy</span>
+                </div>
+                <div className="flex justify-start items-center py-2 gap-2">
+                    <img src={SoftwareCompanies} alt="software-companies" height={20} width={20} />
+                    <span>Terms of Use</span>
                 </div>
             </div>
         </div>
