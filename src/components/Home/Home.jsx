@@ -5,7 +5,7 @@ import BlogFeed from '../BlogFeed/BlogFeed';
 
 const Home = () => {
     return (
-        <div className="mt-2 grid grid-cols-4">
+        <div className="mt-4 grid grid-cols-4 w-full">
             <div  className="ml-auto mr-12 hidden md:block lg:block">
                 <LeftSideBar/>
             </div>

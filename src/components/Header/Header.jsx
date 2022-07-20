@@ -46,7 +46,7 @@ const Header = () => {
         e.stopImmediatePropagation();
     });
     return (
-        <div className="bg-white border-b py-2 border-gray-200 sticky top-0 z-20 shadow-sm flex items-center justify-center w-screen">
+        <div className="bg-white border-b py-2 border-gray-200 sticky top-0 z-20 shadow-sm flex items-center justify-center w-full">
             <div className="px-3 w-full lg:w-5/6 flex justify-between items-center">
             <button className="md:hidden lg:hidden" onClick={sideMenuHandle}>
                 {
