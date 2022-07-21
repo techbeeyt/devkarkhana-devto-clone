@@ -1,5 +1,4 @@
 import React from 'react';
-import './RightSidebar.css'
 
 const ListingItems = ({ item }) => {
   const { title, category } = item;
