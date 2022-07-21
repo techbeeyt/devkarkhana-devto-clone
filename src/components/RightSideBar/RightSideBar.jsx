@@ -1,5 +1,7 @@
 import React from 'react';
 import ListingItems from './ListingItems';
+import { hashItems } from '../../assets/database/rightBar';
+import HashCards from './HashCards';
 
 const RightSideBar = () => {
     const listingItems = [
@@ -51,12 +53,9 @@ const RightSideBar = () => {
                     <button className='w-full py-4 text-center tracking-normal text-gray-800 text-sm hover:text-blue-800 l'>Create a Listing</button>
                 </div>
             </div>
-            <div className='bg-[#fafafa] rounded-lg  mb-4 border-[1px] border-gray-200'>
-                <h1 className='hover:cursor-text p-4 text-xl font-bold text-gray-700'>#help</h1>
-                {
-                    <ListingItems item={{ title: "Extent of API Endpoint", category: "4 comments" }} />
-                }
-            </div>
+            {
+                hashItems.map(hashList => { return <HashCards key={hashList.title} hashList={hashList} /> })
+            }
         </div>
     );
 };
