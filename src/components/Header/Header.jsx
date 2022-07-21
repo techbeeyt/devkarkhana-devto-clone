@@ -1,15 +1,19 @@
 import React from 'react';
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 import { CgSearch } from 'react-icons/cg';
 import { RiNotification3Line } from 'react-icons/ri';
-import {AiOutlineMenu} from 'react-icons/ai'
+import {AiOutlineMenu} from 'react-icons/ai';
+import { GrClose } from 'react-icons/gr';
 import { useState } from 'react';
+import LeftSideBar from '../LeftSideBar/LeftSideBar';
 
 const Header = () => {
     let tgl = false;
     const [showProfile, setShowProfile] = useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [showProfileClass, setShowProfileClass] = useState("translate-y-2 opacity-0 pointer-events-none scale-90");
+    const [mLeftSideBar, setMLeftSideBar] = useState("");
     const [isPClicked, setIsPClicked] = useState("");
     const profileClicked = () => {
         if(showProfile){
@@ -26,6 +30,10 @@ const Header = () => {
 
     }
 
+    const sideMenuHandle = () => {
+        setIsMenuOpen(!isMenuOpen);
+    }
+
     document.addEventListener("click",(e) => {
         const elem = e.target;
         if(elem.getAttribute("id") === "pop_menu"){
@@ -38,9 +46,12 @@ const Header = () => {
         e.stopImmediatePropagation();
     });
     return (
-        <div className="bg-white px-3 lg:px-32 py-2 border-b border-gray-200 flex justify-between items-center shadow-sm sticky top-0 z-20">
-            <button>
-                <AiOutlineMenu size={24} />
+        <div className="bg-white border-b py-2 border-gray-200 sticky top-0 z-20 shadow-sm flex items-center justify-center w-full">
+            <div className="px-3 w-full lg:w-5/6 flex justify-between items-center">
+            <button className="md:hidden lg:hidden" onClick={sideMenuHandle}>
+                {
+                    isMenuOpen ? (<GrClose size={24} />) : (<AiOutlineMenu size={24} />)
+                }
             </button>
             <Link to="/" className="mr-auto ml-4 lg:mx-2">
                 <img src={logo} alt="logo" width="50"/>
@@ -69,32 +80,50 @@ const Header = () => {
                 }>
                     <img className="object-cover" src={`https://m.behindwoods.com/tamil-movies/cinema-articles-photos/the-many-lives-of-fahadh-faasil-photos-pictures-stills.jpg`} alt="profile" />
                 </div>
-                <div id="pop_menu" className={`${showProfileClass} transition-all duration-100 ease-in mx-1 absolute bg-white vw-100-2rem lg:w-64 shadow-lg rounded-md top-12 lg:top-10 right-0 lg:right-0 border border-gray-200 p-2`}>
-                    <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
-                        <h1 className="font-semibold text-gray-600 group-hover:text-indigo-800 group-hover:underline text-lg">Fahadh Fassil</h1>
-                        <span className="text-gray-400 group-hover:text-indigo-800 group-hover:underline text-sm">@fahadhfassil</span>
+                    <div id="pop_menu" className={`${showProfileClass} transition-all duration-100 ease-in mx-1 absolute bg-white vw-100-2rem lg:w-64 shadow-lg rounded-md top-12 lg:top-10 right-0 lg:right-0 border border-gray-200 p-2`}>
+                        <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
+                            <h1 className="font-semibold text-gray-600 group-hover:text-indigo-800 group-hover:underline text-lg">Fahadh Fassil</h1>
+                            <span className="text-gray-400 group-hover:text-indigo-800 group-hover:underline text-sm">@fahadhfassil</span>
+                        </div>
+                        <div className="h-0 w-full border-b border-gray-300 my-2"></div>
+                        <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
+                            Dashboard
+                        </div>
+                        <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
+                            Dashboard
+                        </div>
+                        <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
+                            Dashboard
+                        </div>
+                        <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
+                            Dashboard
+                        </div>
+                        <div className="h-0 w-full border-b border-gray-300 my-2"></div>
+                        <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
+                            Sign Out
+                        </div>
                     </div>
-                    <div className="h-0 w-full border-b border-gray-300 my-2"></div>
-                    <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
-                        Dashboard
-                    </div>
-                    <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
-                        Dashboard
-                    </div>
-                    <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
-                        Dashboard
-                    </div>
-                    <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
-                        Dashboard
-                    </div>
-                    <div className="h-0 w-full border-b border-gray-300 my-2"></div>
-                    <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
-                        Sign Out
-                    </div>
+                
                 </div>
-            
+                
             </div>
-            
+            {
+                isMenuOpen ? (
+                    <div 
+                    id="m_side_bar"
+                    className={`fixed z-10 ${mLeftSideBar} bg-black bg-opacity-25 absolute top-0 left-0 md:hidden lg:hidden w-full`}
+                    onClick={(e) => {
+                        if(e.target.id === "m_side_bar"){
+                            setIsMenuOpen(!isMenuOpen);
+                        }
+                    }}
+                    >
+                        <div className="w-72 h-screen overflow-y-scroll">
+                            <LeftSideBar />
+                        </div>
+                    </div>
+                ) : null
+            }
         </div>
     );
 };
