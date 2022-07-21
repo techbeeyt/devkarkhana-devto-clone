@@ -1,19 +1,21 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setShowMobileMenu } from '../../store/AppState';
+
 import logo from '../../assets/logo.png';
 import { Link } from 'react-router-dom';
 import { CgSearch } from 'react-icons/cg';
 import { RiNotification3Line } from 'react-icons/ri';
 import {AiOutlineMenu} from 'react-icons/ai';
-import { GrClose } from 'react-icons/gr';
 import { useState } from 'react';
 import LeftSideBar from '../LeftSideBar/LeftSideBar';
 
 const Header = () => {
-    let tgl = false;
+    const showMobileMenu = useSelector(state => state.AppState.showMobileMenu);
+    const dispatch = useDispatch();
+
     const [showProfile, setShowProfile] = useState(false);
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [showProfileClass, setShowProfileClass] = useState("translate-y-2 opacity-0 pointer-events-none scale-90");
-    const [mLeftSideBar, setMLeftSideBar] = useState("");
     const [isPClicked, setIsPClicked] = useState("");
     const profileClicked = () => {
         if(showProfile){
@@ -26,32 +28,17 @@ const Header = () => {
             setIsPClicked("outline outline-4 outline-gray-300");
         }
         setShowProfile(!showProfile);
-        tgl = !tgl;
-
     }
 
     const sideMenuHandle = () => {
-        setIsMenuOpen(!isMenuOpen);
+        dispatch(setShowMobileMenu(showMobileMenu));
     }
 
-    document.addEventListener("click",(e) => {
-        const elem = e.target;
-        if(elem.getAttribute("id") === "pop_menu"){
-            console.log("this is pop menu");
-        }else {
-            console.log("This is not a pop menu");
-            setShowProfileClass("-translate-y-10 translate-x-4 opacity-0 pointer-events-none scale-90");
-            setIsPClicked("");
-        }
-        e.stopImmediatePropagation();
-    });
     return (
-        <div className="bg-white border-b py-2 border-gray-200 sticky top-0 z-20 shadow-sm flex items-center justify-center w-screen">
+        <div className="bg-white border-b py-2 border-gray-200 sticky top-0 z-20 shadow-sm flex items-center justify-center w-full">
             <div className="px-3 w-full lg:w-5/6 flex justify-between items-center">
             <button className="md:hidden lg:hidden" onClick={sideMenuHandle}>
-                {
-                    isMenuOpen ? (<GrClose size={24} />) : (<AiOutlineMenu size={24} />)
-                }
+                <AiOutlineMenu size={24} />
             </button>
             <Link to="/" className="mr-auto ml-4 lg:mx-2">
                 <img src={logo} alt="logo" width="50"/>
@@ -108,13 +95,13 @@ const Header = () => {
                 
             </div>
             {
-                isMenuOpen ? (
+                showMobileMenu ? (
                     <div 
                     id="m_side_bar"
-                    className={`fixed z-10 ${mLeftSideBar} bg-black bg-opacity-25 absolute top-0 left-0 md:hidden lg:hidden w-full`}
+                    className={`fixed z-10 bg-black bg-opacity-25 top-0 left-0 md:hidden lg:hidden w-full`}
                     onClick={(e) => {
                         if(e.target.id === "m_side_bar"){
-                            setIsMenuOpen(!isMenuOpen);
+                            dispatch(setShowMobileMenu(showMobileMenu));
                         }
                     }}
                     >

@@ -2,7 +2,7 @@ import React from 'react';
 
 const BlogFeed = () => {
     return (
-        <div className="bg-orange-800">
+        <div className="min-h-full">
             This is a blog feed
         </div>
     );
