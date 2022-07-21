@@ -17,17 +17,17 @@ const Header = () => {
 
     const [showProfile, setShowProfile] = useState(false);
     const [popmenu, setPopmenu] = useState("pointer-events-none");
-    const [showProfileClass, setShowProfileClass] = useState("translate-y-2 opacity-0 pointer-events-none scale-90");
+    const [showProfileClass, setShowProfileClass] = useState("translate-y-2 opacity-0 pointer-events-none scale-90 hidden");
     const [isPClicked, setIsPClicked] = useState("");
     const profileClicked = () => {
         if(showProfile){
             //Hiding the div
-            setShowProfileClass("-translate-y-10 translate-x-4 opacity-0 pointer-events-none scale-90");
+            setShowProfileClass("-translate-y-10 translate-x-4 opacity-0 pointer-events-none scale-90 hidden");
             setIsPClicked("");
             setPopmenu("pointer-events-none");
         } else {
             //Showing the div
-            setShowProfileClass("translate-y-0 translate-x-0 opacity-1 scale-100");
+            setShowProfileClass("translate-y-0 translate-x-0 opacity-1 scale-100 block");
             setIsPClicked("outline outline-4 outline-gray-300");
             setPopmenu("pointer-events-auto");
         }
@@ -62,7 +62,7 @@ const Header = () => {
             <button className="relative flex justify-center items-center mr-2 h-10 w-10 hover:bg-purple-100 hover:text-indigo-600 rounded-md">
                 <RiNotification3Line size={26} />
             </button>
-            <div className="relative">
+            <div className="relative cursor-pointer">
                 <div className={`${isPClicked} h-8 w-8 mx-2 rounded-full bg-slate-200 hover:outline hover:outline-4 hover:outline-indigo-200 overflow-hidden`}  
                 onClick={(e) => {
                         profileClicked();
@@ -98,7 +98,7 @@ const Header = () => {
                         profileClicked();
                     }
                 }}>
-                <div className={`${showProfileClass} transition-all duration-100 ease-in absolute bg-white vw-100-1rem md:w-64 lg:w-64 shadow-lg rounded-md top-2 lg:top-0 md:right-6 lg:right-28 border border-gray-300 p-2 pointer-events-auto`}>
+                <div className={`${showProfileClass} transition-all delay-300 duration-100 ease-in absolute bg-white vw-100-1rem md:w-64 lg:w-64 shadow-lg rounded-md top-2 lg:top-0 md:right-6 lg:right-28 border border-gray-300 p-2 pointer-events-auto`}>
                     <HoverDiv>
                         <h1 className="font-semibold text-gray-600 group-hover:text-indigo-800 group-hover:underline text-lg">Fahadh Fassil</h1>
                         <span className="text-gray-400 group-hover:text-indigo-800 group-hover:underline text-sm">@fahadhfassil</span>

@@ -1,30 +1,32 @@
 import React from 'react';
 import ListingItems from './ListingItems';
+import { hashItems } from '../../assets/database/rightBar';
+import HashCards from './HashCards';
 
 const RightSideBar = () => {
     const listingItems = [
         {
-            key: 0,
+            key: 123345,
             title: "Only one Entry in Planning Contest So Far",
             category: "events",
         },
         {
-            key: 1,
+            key: 123121,
             title: "Freelance Full-Stack Web Developer",
             category: "forhire",
         },
         {
-            key: 2,
+            key: 21231244,
             title: "Creating email templates is difficult and time-consuming. Let's solve it :) ",
             category: "products",
         },
         {
-            key: 3,
+            key: 143123,
             title: "I'll be your JavaScript mentor",
             category: "collabs",
         },
         {
-            key: 4,
+            key: 12324324,
             title: "📨 This Week In React: newsletter for professionals ⚛️",
             category: "collabs",
         },
@@ -48,15 +50,12 @@ const RightSideBar = () => {
                     {
                         listingItems.map(item => { return <ListingItems key={item.key} item={item} /> })
                     }
-                    <button className='w-full py-4 text-center tracking-normal text-gray-800 text-sm hover:text-blue-800 l'>Create a Listing</button>
+                    <button className='w-full py-4 text-center tracking-normal text-sm text-gray-600 font-semibold hover:text-blue-800 l'>Create a Listing</button>
                 </div>
             </div>
-            <div className='bg-[#fafafa] rounded-lg  mb-4 border-[1px] border-gray-200'>
-                <h1 className='hover:cursor-text p-4 text-xl font-bold text-gray-700'>#help</h1>
-                {
-                    <ListingItems item={{ title: "Extent of API Endpoint", category: "4 comments" }} />
-                }
-            </div>
+            {
+                hashItems.map(hashList => { return <HashCards key={hashList.title} hashList={hashList} /> })
+            }
         </div>
     );
 };

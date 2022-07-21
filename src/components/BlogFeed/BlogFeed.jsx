@@ -8,9 +8,9 @@ import { toSlug } from '../../Control/toSlug';
 const BlogFeed = () => {
 
     return (
-        <div className="min-h-full flex flex-col justify-center w-full">
+        <div className="min-h-full flex flex-col w-full">
             <section>
-                <button className="mx-0.5 text-gray-700 py-1.5 px-2.5 rounded text-lg bg-gray-100  hover:bg-white hover:text-indigo-600">
+                <button className="mx-0.5 text-gray-700 py-1.5 px-2.5 rounded text-lg font-bold bg-gray-100  hover:bg-white hover:text-indigo-600">
                     Relevant
                 </button>
 
@@ -34,7 +34,7 @@ const BlogFeed = () => {
                                 <div className='flex flex-row items-start' >
                                     <div className="avatar w-8">
                                         <div className="w-24 rounded-full">
-                                            <img src="https://placeimg.com/192/192/people" />
+                                            <img src="https://placeimg.com/192/192/people" alt=""/>
                                         </div>
                                     </div>
                                     <div className='ml-2'>
@@ -56,7 +56,7 @@ const BlogFeed = () => {
                                     <div className="card-actions justify-between ml-0 mt-3">
                                         <div className='flex flex-row '>
                                             <button className='p-1.5 items-center rounded hover:bg-gray-100 flex flex-rowv text-gray-600'><RiHeart2Line size={20}/> <span className='px-2'>{post.hearts} <span className='hidden sm:inline'>Reactions</span></span></button>
-                                            <button className='p-1.5 items-center  rounded hover:bg-gray-100 flex flex-row text-gray-600'> <img src={Comments} /> <span className='px-2'>{post.comments.count} <span className='hidden sm:inline'>Comments</span></span></button>
+                                            <button className='p-1.5 items-center  rounded hover:bg-gray-100 flex flex-row text-gray-600'> <img src={Comments} alt=""/> <span className='px-2'>{post.comments.count} <span className='hidden sm:inline'>Comments</span></span></button>
                                         </div>
                                         <button className="mx-0.5  text-gray-700 py-1.5 px-2.5 rounded-lg  bg-gray-200 hover:bg-gray-300 ">Save</button>
                                     </div>
