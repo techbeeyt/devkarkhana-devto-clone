@@ -1,4 +1,4 @@
-export const post =
+export const posts =[{
     date: "jul-10-2022",
     name: 'Franklin H',
     img: "https://res.cloudinary.com/practicaldev/image/fetch/s--QPri6qQ7--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/h3la7vtwfrg6wplmt03i.png",
