@@ -9,12 +9,14 @@ import { RiNotification3Line } from 'react-icons/ri';
 import {AiOutlineMenu} from 'react-icons/ai';
 import { useState } from 'react';
 import LeftSideBar from '../LeftSideBar/LeftSideBar';
+import HoverDiv from './../HoverDiv/HoverDiv';
 
 const Header = () => {
     const showMobileMenu = useSelector(state => state.AppState.showMobileMenu);
     const dispatch = useDispatch();
 
     const [showProfile, setShowProfile] = useState(false);
+    const [popmenu, setPopmenu] = useState("pointer-events-none");
     const [showProfileClass, setShowProfileClass] = useState("translate-y-2 opacity-0 pointer-events-none scale-90");
     const [isPClicked, setIsPClicked] = useState("");
     const profileClicked = () => {
@@ -22,10 +24,12 @@ const Header = () => {
             //Hiding the div
             setShowProfileClass("-translate-y-10 translate-x-4 opacity-0 pointer-events-none scale-90");
             setIsPClicked("");
+            setPopmenu("pointer-events-none");
         } else {
             //Showing the div
             setShowProfileClass("translate-y-0 translate-x-0 opacity-1 scale-100");
             setIsPClicked("outline outline-4 outline-gray-300");
+            setPopmenu("pointer-events-auto");
         }
         setShowProfile(!showProfile);
     }
@@ -33,9 +37,9 @@ const Header = () => {
     const sideMenuHandle = () => {
         dispatch(setShowMobileMenu(showMobileMenu));
     }
-
     return (
-        <div className="bg-white border-b py-2 border-gray-200 sticky top-0 z-20 shadow-sm flex items-center justify-center w-full">
+        <div className="bg-white border-b py-2 border-gray-300 sticky top-0 z-20 shadow-sm flex items-center justify-center w-full">
+            <div className={`transition-all duration-700 ease-in-out absolute h-1.5 bg-indigo-700 top-0 left-0`}></div>
             <div className="px-3 w-full lg:w-5/6 flex justify-between items-center">
             <button className="md:hidden lg:hidden" onClick={sideMenuHandle}>
                 <AiOutlineMenu size={24} />
@@ -67,30 +71,6 @@ const Header = () => {
                 }>
                     <img className="object-cover" src={`https://m.behindwoods.com/tamil-movies/cinema-articles-photos/the-many-lives-of-fahadh-faasil-photos-pictures-stills.jpg`} alt="profile" />
                 </div>
-                    <div id="pop_menu" className={`${showProfileClass} transition-all duration-100 ease-in mx-1 absolute bg-white vw-100-2rem lg:w-64 shadow-lg rounded-md top-12 lg:top-10 right-0 lg:right-0 border border-gray-200 p-2`}>
-                        <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
-                            <h1 className="font-semibold text-gray-600 group-hover:text-indigo-800 group-hover:underline text-lg">Fahadh Fassil</h1>
-                            <span className="text-gray-400 group-hover:text-indigo-800 group-hover:underline text-sm">@fahadhfassil</span>
-                        </div>
-                        <div className="h-0 w-full border-b border-gray-300 my-2"></div>
-                        <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
-                            Dashboard
-                        </div>
-                        <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
-                            Dashboard
-                        </div>
-                        <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
-                            Dashboard
-                        </div>
-                        <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
-                            Dashboard
-                        </div>
-                        <div className="h-0 w-full border-b border-gray-300 my-2"></div>
-                        <div className="px-4 py-2 hover:bg-purple-200 rounded-md group">
-                            Sign Out
-                        </div>
-                    </div>
-                
                 </div>
                 
             </div>
@@ -105,12 +85,43 @@ const Header = () => {
                         }
                     }}
                     >
-                        <div className="w-72 h-screen overflow-y-scroll">
+                        <div className="w-72 vh-100-2rem overflow-y-scroll">
                             <LeftSideBar />
                         </div>
                     </div>
                 ) : null
             }
+            <div id="pop_menu" className={`${popmenu} absolute top-14 right-0 bottom-0 left-0 h-screen flex justify-center lg:block`}
+                onClick={(e) => {
+                    console.log(e.target.id)
+                    if(e.target.id === 'pop_menu'){
+                        profileClicked();
+                    }
+                }}>
+                <div className={`${showProfileClass} transition-all duration-100 ease-in absolute bg-white vw-100-1rem md:w-64 lg:w-64 shadow-lg rounded-md top-2 lg:top-0 md:right-6 lg:right-28 border border-gray-300 p-2 pointer-events-auto`}>
+                    <HoverDiv>
+                        <h1 className="font-semibold text-gray-600 group-hover:text-indigo-800 group-hover:underline text-lg">Fahadh Fassil</h1>
+                        <span className="text-gray-400 group-hover:text-indigo-800 group-hover:underline text-sm">@fahadhfassil</span>
+                    </HoverDiv>
+                    <div className="h-0 w-full border-b border-gray-300 my-2"></div>
+                    <HoverDiv>
+                        Dashboard
+                    </HoverDiv>
+                    <HoverDiv>
+                        Create Post
+                    </HoverDiv>
+                    <HoverDiv>
+                        Reading List
+                    </HoverDiv>
+                    <HoverDiv>
+                        Settings
+                    </HoverDiv>
+                    <div className="h-0 w-full border-b border-gray-300 my-2"></div>
+                    <HoverDiv>
+                        Sign Out
+                    </HoverDiv>
+                </div>
+            </div>
         </div>
     );
 };

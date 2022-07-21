@@ -18,6 +18,14 @@ code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+.vw-100-1rem {
+    width: calc(100vw - 1rem);
+}
+
 .vw-100-2rem {
     width: calc(100vw - 2rem);
+}
+
+.vh-100-2rem {
+    height: calc(100vh - 2rem);
 }
