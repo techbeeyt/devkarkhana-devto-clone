@@ -2,7 +2,7 @@ import React from 'react';
 
 const HoverDiv = ({ children }) => {
     return (
-        <div className="p-2 hover:bg-purple-200 hover:text-indigo-800 hover:underline rounded-md group">
+        <div className="p-2 hover:bg-purple-200 hover:text-indigo-800 hover:underline rounded-md group cursor-pointer">
             {children}
         </div>
     );
