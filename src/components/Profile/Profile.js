@@ -1,10 +1,18 @@
-import React from "react";
+import "./Profile.css";
 import { useParams } from "react-router-dom";
+import Footer from "./../Footer/Footer";
 
 const Profile = () => {
   const { username } = useParams();
   console.log(username);
-  return <div>Welcome to profile</div>;
+  return (
+    <div className="profile-container">
+      <div className="profile">Welcome to profile</div>
+      <div className="footer">
+        <Footer />
+      </div>
+    </div>
+  );
 };
 
 export default Profile;
