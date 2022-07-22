@@ -79,8 +79,6 @@ const BlogFeed = () => {
 
 
                             </div>
-
-
                         </div>)
                 }
 

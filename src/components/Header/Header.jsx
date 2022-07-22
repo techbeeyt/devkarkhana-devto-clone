@@ -100,12 +100,16 @@ const Header = () => {
                 }}>
                 <div className={`${showProfileClass} transition-all duration-100 ease-in absolute bg-white vw-100-1rem md:w-64 lg:w-64 shadow-lg rounded-md top-2 lg:top-0 md:right-6 lg:right-28 border border-gray-300 p-2 pointer-events-auto`}>
                     <HoverDiv>
-                        <h1 className="font-semibold text-gray-600 group-hover:text-indigo-800 group-hover:underline text-lg">Fahadh Fassil</h1>
-                        <span className="text-gray-400 group-hover:text-indigo-800 group-hover:underline text-sm">@fahadhfassil</span>
+                        <Link to='profile'>
+                            <h1 className="font-semibold text-gray-600 group-hover:text-indigo-800 group-hover:underline text-lg">Fahadh Fassil</h1>
+                            <span className="text-gray-400 group-hover:text-indigo-800 group-hover:underline text-sm">@fahadhfassil</span>
+                        </Link>
                     </HoverDiv>
                     <div className="h-0 w-full border-b border-gray-300 my-2"></div>
                     <HoverDiv>
-                        Dashboard
+                       <Link to='/dashboard'>
+                            Dashboard
+                       </Link>
                     </HoverDiv>
                     <HoverDiv>
                         Create Post
