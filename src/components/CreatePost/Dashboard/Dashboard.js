@@ -1,6 +1,7 @@
 import "./Dashboard.css";
 import { Link } from "react-router-dom";
-import Footer from "../../Footer/Footer";
+import Footer from "./../Footer/Footer";
+import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
 
 const Dashboard = () => {
   return (
@@ -19,19 +20,22 @@ const Dashboard = () => {
       </select>
 
       <div class="grid grid-cols-2  md:grid-cols-4 gap-4">
-        <div className="Card">
+        <div className="Card ">
           <div className="Card-title">0</div>
           <div className="Card-desc">Total post reactions</div>
         </div>
-        <div className="Card">
-          <div className="Card-title"> 500</div>
+        <div className="Card  ">
+          <div className="Card-title flex items-center">
+            <ArrowBackIosIcon />
+            500
+          </div>
           <div className="Card-desc">Total post views</div>
         </div>
-        <div className="Card">
+        <div className="Card  ">
           <div className="Card-title">0</div>
           <div className="Card-desc">Listings Created</div>
         </div>
-        <div className="Card">
+        <div className="Card  ">
           <div className="Card-title">0</div>
           <div className="Card-desc">Cradits availables</div>
         </div>
