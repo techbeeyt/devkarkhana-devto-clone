@@ -3,7 +3,8 @@ import Header from "./components/Header/Header";
 import Home from "./components/Home/Home";
 import Profile from "./components/Profile/Profile";
 import { Routes, Route } from "react-router-dom";
-import Dashboard from "./components/Dashboard/Dashboard";
+import Dashboard from "./components/CreatePost/Dashboard/Dashboard";
+import SearchPage from "./components/SearchPage/SearchPage";
 
 const App = () => {
   return (
