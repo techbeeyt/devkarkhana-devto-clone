@@ -4,7 +4,6 @@ import { useLocation } from 'react-router-dom';
 const HoverDiv2 = ({ children, isSelected }) => {
     const location = useLocation();
     const param = new URLSearchParams(location.search);
-
     const data = children.toString().toLowerCase();
 
     return (

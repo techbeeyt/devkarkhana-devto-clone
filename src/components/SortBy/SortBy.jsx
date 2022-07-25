@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const SortBy = ({ item }) => {
+    useEffect(() => {
+        
+    },[])
     // eslint-disable-next-line
     const [sort, setSort] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
-    const doSort = () => {
+    const doSort = (e) => {
+        for(var i = 0; i < 3 ; i++){
+            e.target.parentElement.children[i].classList.remove('font-bold');
+        }
+        e.target.classList.add("font-bold");
+
         const param = new URLSearchParams(location.search);
         let paramObj = {};
         for(const [key, value] of param) {
@@ -17,7 +25,7 @@ const SortBy = ({ item }) => {
         setSort(param.get('sort'));
     }
     return (
-        <div data-sort={item.name} className='whitespace-nowrap' onClick={doSort}>{item.title}</div>
+        <div data-sort={item.name} className='cursor-pointer whitespace-nowrap' onClick={doSort}>{item.title}</div>
     );
 };
 

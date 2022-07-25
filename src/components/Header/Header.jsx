@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setShowMobileMenu, setSearchQuery } from '../../store/AppState';
 import { useNavigate, useLocation } from 'react-router-dom';
@@ -14,10 +14,17 @@ import HoverDiv from './../HoverDiv/HoverDiv';
 
 const Header = () => {
     const location = useLocation();
+    const param = new URLSearchParams(location.search);
+    const search_query = param.get('q');
     const [searchText, setSearchText] = useState('');
     const navigate = useNavigate();
     const showMobileMenu = useSelector(state => state.AppState.showMobileMenu);
+    const searchQuery = useSelector(state => state.AppState.searchQuery);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        setSearchText(search_query);
+    },[])
 
     const [showProfile, setShowProfile] = useState(false);
     const [popmenu, setPopmenu] = useState("pointer-events-none");
@@ -51,7 +58,7 @@ const Header = () => {
                 <AiOutlineMenu size={24} />
             </button>
             <Link to="/" className="mr-auto ml-4 lg:mx-2">
-                <img src={logo} alt="logo" width="50"/>
+                <img src={logo} alt="logo" width="50"  onClick={() => searchText('')}/>
             </Link>
             {/* ! Lg Search bar */}
             <div className="hidden border border-gray-300 rounded-md ml-2 mr-auto overflow-hidden lg:flex items-center justify-center focus-within:outline focus-within:outline-2 focus-within:outline-indigo-600">
@@ -66,7 +73,7 @@ const Header = () => {
                     }
                     const params = new URLSearchParams({ ...paramObj, "q": searchText });
                     dispatch(setSearchQuery(searchText));
-                    if(searchText.length > 0) navigate({pathname: location.pathname, search: params.toString()});
+                    if(searchText.length > 0) navigate({pathname: '/search', search: params.toString()});
                     dispatch(setSearchQuery(searchText));
                 }}>
                     <CgSearch size={24}/>
@@ -145,6 +152,7 @@ const Header = () => {
                     </HoverDiv>
                 </div>
             </div>
+            
         </div>
     );
 };
