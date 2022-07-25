@@ -1,12 +1,11 @@
-
-.dark{
+.dark {
     width: 100%;
     height: 200px;
     background-color: black;
     z-index: 1;
 }
 
-.profile{
+.profile {
     position: relative;
     margin: 0 auto !important;
     padding: 10px;
@@ -15,7 +14,7 @@
     background-color: aliceblue;
 }
 
-.image-container{
+.image-container {
     position: absolute;
     top: -50px;
     left: 43%;
@@ -23,15 +22,13 @@
     border-radius: 50%;
 }
 
-
-
-.image{
+.image {
     width: 100px;
     height: 100px;
     border-radius: 50%;
 }
 
-.desc{
+.desc {
     width: 50%;
     margin: 0 auto;
     margin-top: 100px;
@@ -41,56 +38,56 @@
     flex-direction: column;
 }
 
-.constent{
+.constent {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.name{
+.name {
     font-weight: bold;
     font-size: 1.5rem;
 }
 
-.see-more{
+.see-more {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
 }
 
-.more{
+.more {
     margin: 0 auto;
     background-color: aliceblue;
 }
-.edit-button-conteianer{
+
+.edit-button-conteianer {
     display: flex;
     flex-direction: end;
     padding-right: 20px;
 }
-.edit-profile-button{
+
+.edit-profile-button {
     min-width: 100px;
     margin-left: auto;
     background-color: rgb(131, 131, 206);
 }
 
-.seemore-button{
+.seemore-button {
     background-color: rgb(134, 134, 206);
 }
 
 @media only screen and (max-width: 600px) {
-    .image-container{
+    .image-container {
         left: 10%;
     }
-    .desc{
+    .desc {
         margin: 0;
         margin-top: 50px;
     }
-    .constent{
+    .constent {
         display: flex;
-        justify-content: start;
-        align-items: flex-start;
         flex-direction: column;
     }
-  }
+}

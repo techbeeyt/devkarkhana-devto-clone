@@ -1,7 +1,7 @@
 import "./Dashboard.css";
 import { Link } from "react-router-dom";
-import Footer from "./../Footer/Footer";
-import ArrowBackIosIcon from "@material-ui/icons/ArrowBackIos";
+import Footer from "../Footer/Footer";
+import { MdArrowBackIosNew } from 'react-icons/md'
 
 const Dashboard = () => {
   return (
@@ -26,7 +26,7 @@ const Dashboard = () => {
         </div>
         <div className="Card  ">
           <div className="Card-title flex items-center">
-            <ArrowBackIosIcon />
+            <MdArrowBackIosNew />
             500
           </div>
           <div className="Card-desc">Total post views</div>
@@ -98,7 +98,7 @@ const Dashboard = () => {
             <div className="post-elements">
               <img
                 className="sloan mb-7"
-                alt="Mascot image"
+                alt="mascot"
                 src="https://res.cloudinary.com/practicaldev/image/fetch/s--XHE_XeFn--/c_imagga_scale,f_auto,fl_progressive,q_auto,w_300/https://dev-to-uploads.s3.amazonaws.com/i/y5767q6brm62skiyywvc.png"
               />
               <p className="mb-6">
