@@ -8,7 +8,7 @@ import Comments from '../../assets/svg/blogfeed/comments.svg';
 const BlogContainer = ({post}) => {
     return (
         <Link to={`/${post.userID}/${toSlug(post.post_title)}`}>
-            <div key={post.postID} className="rounded-md overflow-hidden mb-2 mr-5 bg-white border border-gray-300 active:outline active:outline-3 active:outline-indigo-600">
+            <div key={post.postID} className="rounded-md overflow-hidden mb-2 bg-white border border-gray-300 active:outline active:outline-3 active:outline-indigo-600">
                 {
                     post.img ? (<figure className="-mt-1"><img src={post.img} alt=""/></figure>) : null
                 }

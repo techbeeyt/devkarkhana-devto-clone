@@ -19,7 +19,7 @@ const BlogFeed = () => {
                 </button>
             </section>
             {/* BlogFeed Main section */}
-            <section className='mt-5'>
+            <section className='mt-2 md:mt-5 lg:mt-5'>
                 {
                     posts.map(post =>
                         <BlogContainer post={post} />  

@@ -9,6 +9,8 @@ import { sortByData } from '../SortBy/SortByData';
 import Filter from './Filter';
 import { useLocation } from 'react-router-dom';
 import Footer from './../Footer/Footer';
+import { posts } from '../../assets/database/posts';
+import BlogContainer from '../BlogFeed/BlogContainer';
 
 
 const SearchPage = () => {
@@ -26,14 +28,14 @@ const SearchPage = () => {
         <div className="flex justify-center items-center w-full mb-10">
             <div className="w-full md:w-4/6 lg:w-4/6 px-3">
                 {/* Top */}
-                <div className="md:mt-4 lg:mt-4 flex flex-col md:flex-row lg:flex-row justify-center md:justify-between lg:justify-between items-start">
-                    <div className="md:mb-6 lg:mb-6 w-full">
+                <div className="md:mb-4 lg:mb-4 md:mt-4 lg:mt-4 flex flex-col md:flex-row lg:flex-row justify-center md:justify-between lg:justify-between items-start md:items-center lg:items-center">
+                    <div className="w-full">
                         <span className="text-3xl font-bold hidden md:block lg:block">Search Result for {searchQuery}</span>
                         <div className="block md:hidden lg:hidden">
                             <MobileSearchBar />
                         </div>
                     </div>
-                    <div className="px-1 flex items-center gap-4 w-full">
+                    <div className="mb-2 md:mb-0 lg:mb-0 px-1 flex items-center justify-start md:justify-end lg:justify-end gap-4 w-full">
                         {
                             sortByData.map((item, i) => {
                                 return <SortBy key={i} item={item} />
@@ -42,8 +44,8 @@ const SearchPage = () => {
                     </div>
                 </div>
                 {/* Search Result */}
-                <div className="flex flex-col md:flex-row lg:flex-row justify-start items-start">
-                    <div className="w-full px-1 md:px-4 lg:px-4 md:w-1/4 lg:w-1/4">
+                <div className="flex flex-col md:flex-row lg:flex-row justify-start items-center md:items-start lg:items-start">
+                    <div className="w-full flex gap-4 md:block lg:block px-1 md:px-4 lg:px-4 md:w-1/4 lg:w-1/4  overflow-x-scroll mb-2 md:mb-0 lg:mb-0">
                         {
                             filterByData.map((item, i) => {
                                 console.log('index: '+ i);
@@ -53,7 +55,9 @@ const SearchPage = () => {
                     </div>
                     <div className="w-full md:w-3/4 lg:w-3/4">
                         {
-                            `Showing Data`
+                            posts.map(post =>{
+                                return <BlogContainer post={post} />
+                            })
                         }
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 export const sortByData = [
-    { name: 'relevant', title: 'Most relevant' },
-    { name: 'newest', title: 'Newest' },
-    { name: 'oldest', title: 'Oldest' }
+    { id: 0, name: 'relevant', title: 'Most relevant' },
+    { id: 1, name: 'newest', title: 'Newest' },
+    { id: 2, name: 'oldest', title: 'Oldest' }
 ]

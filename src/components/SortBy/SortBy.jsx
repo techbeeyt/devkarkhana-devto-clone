@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const SortBy = ({ item }) => {
+const SortBy = ({ item, selected }) => {
+    const [selClass, setClass] = useState('');
     useEffect(() => {
         
     },[])
@@ -24,8 +25,23 @@ const SortBy = ({ item }) => {
         navigate({pathname: location.pathname, search: params.toString()});
         setSort(param.get('sort'));
     }
+
+    useEffect(() => {
+        const param = new URLSearchParams(location.search);
+        const sort = param.get('sort');
+        if(selected === item.id){
+            if(!sort){
+                setClass('md:bg-white font-bold lg:bg-white');
+            }else {
+                setClass('');
+            }
+
+        }
+        //eslint-disable-next-line
+    },[])
+
     return (
-        <div data-sort={item.name} className='cursor-pointer whitespace-nowrap' onClick={doSort}>{item.title}</div>
+        <div data-sort={item.name} className={`${selClass} cursor-pointer whitespace-nowrap`} onClick={doSort}>{item.title}</div>
     );
 };
 

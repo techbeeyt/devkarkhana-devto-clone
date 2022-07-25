@@ -10,7 +10,7 @@ const Home = () => {
             <div  className="ml-auto mr-4 hidden md:block lg:block">
                 <LeftSideBar/>
             </div>
-            <div className="col-span-4 md:col-span-3 lg:col-span-2 ml-4">
+            <div className="col-span-4 md:col-span-3 lg:col-span-2 ml-4 mr-4">
                 <BlogFeed />
             </div>
             <div className="hidden lg:block">
