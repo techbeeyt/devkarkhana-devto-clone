@@ -1,0 +1,28 @@
+.Archive {
+    position: relative;
+    font-size: 17px;
+    left: 45%;
+    background: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    /* border-width: 20px; */
+    min-height: 7vh;
+    min-width: 10%;
+    padding-right: 2px;
+    
+    
+}
+.Archive:hover{
+    background-color: #d4defa;
+    /* text-align: center; */
+    height: 20px;
+    width: 20px;
+    text-decoration: underline;
+    padding-right: 2px;
+    /* border:1px solid red; ;  */
+}
+
+.Search{
+    position: relative;
+    left: 50%;
+}
