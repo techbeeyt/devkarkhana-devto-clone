@@ -57,11 +57,11 @@ const Header = () => {
             <button className="md:hidden lg:hidden" onClick={sideMenuHandle}>
                 <AiOutlineMenu size={24} />
             </button>
-            <Link to="/" className="mr-auto ml-4 lg:mx-2">
+            <Link to="/" className="mr-auto md:mr-0 ml-4 lg:mx-2">
                 <img src={logo} alt="logo" width="50"  onClick={() => searchText('')}/>
             </Link>
             {/* ! Lg Search bar */}
-            <div className="hidden border border-gray-300 rounded-md ml-2 mr-auto overflow-hidden lg:flex items-center justify-center focus-within:outline focus-within:outline-2 focus-within:outline-indigo-600">
+            <div className="hidden border border-gray-300 rounded-md ml-2 mr-auto overflow-hidden md:flex lg:flex items-center justify-center focus-within:outline focus-within:outline-2 focus-within:outline-indigo-600">
                 <input type="text" className="px-2 focus:outline-none w-96" placeholder="Search..." value={searchText} onChange={(e) => {
                     setSearchText(e.target.value);
                 }}/>
@@ -79,10 +79,10 @@ const Header = () => {
                     <CgSearch size={24}/>
                 </button>
             </div>
-            <button onClick={() => navigate(`/search`)} className="relative flex lg:hidden justify-center items-center mr-2 h-10 w-10 hover:bg-purple-100 hover:text-indigo-600 rounded-md">
+            <button onClick={() => navigate(`/search`)} className="relative flex md:hidden lg:hidden justify-center items-center mr-2 h-10 w-10 hover:bg-purple-100 hover:text-indigo-600 rounded-md">
                 <CgSearch size={26}/>
             </button>
-            <button className="hidden lg:block font-semibold text-indigo-600 px-4 py-2 mx-2 border border-indigo-600 rounded-md hover:bg-indigo-600 hover:text-white hover:underline">
+            <button className="hidden md:block lg:block font-semibold text-indigo-600 px-4 py-2 mx-2 border border-indigo-600 rounded-md hover:bg-indigo-600 hover:text-white hover:underline">
                 Create Post
             </button>
             <button className="relative flex justify-center items-center mr-2 h-10 w-10 hover:bg-purple-100 hover:text-indigo-600 rounded-md">

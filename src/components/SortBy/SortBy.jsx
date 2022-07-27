@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
-const SortBy = ({ item, selected }) => {
+const SortBy = ({ item, selected, setSelected }) => {
     const [selClass, setClass] = useState('');
     useEffect(() => {
         
@@ -31,7 +31,7 @@ const SortBy = ({ item, selected }) => {
         const sort = param.get('sort');
         if(selected === item.id){
             if(!sort){
-                setClass('md:bg-white font-bold lg:bg-white');
+                setClass('font-bold');
             }else {
                 setClass('');
             }

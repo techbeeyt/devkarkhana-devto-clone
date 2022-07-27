@@ -50,8 +50,8 @@ export const posts = [{
         name: 'Ms. Hudson',
         userID: "1003",
         postID: "p102",
-        post_title: "How to get web development clients ???",
-        post_body: "According to the reports, the web and mobile development industry is expected to grow faster than the average for all occupations at 9% CAGR (US Bureau of Labor Statistics).I’m working in this field for the last 6–7 years and also running the fastest software development and digital marketing company and generating more than $100k per year many of us are willing to do so, they are well skilled but they don’t know how to get clients? Getting clients from freelancing platforms is too hard as they are already overcrowded and over-rushed.",
+        post_title: "Should you use bun.js right now ?",
+        post_body: "Bun js is alternative to nodejs . which is way more faster than node js . Node js is javascript runtime environment as well as bun js, but bun js is more faster",
         tags: [
             "webdev", "web", "webdesign", "web3"
         ],
@@ -95,8 +95,8 @@ export const posts = [{
         name: 'Jamie J',
         userID: "1007",
         postID: "p103",
-        post_title: "Hello, world!",
-        post_body: "According to the reports, the web and mobile development industry is expected to grow faster than the average for all [Click This Link](www.google.com) occupations at 9% CAGR (US Bureau of Labor Statistics).I’m working in this field for the last 6–7 years and also running the fastest software development and digital marketing company and generating more than $100k per year many of us are willing to do so, they are well skilled but they don’t know how to get clients? Getting clients from freelancing platforms is too hard as they are already overcrowded and over-rushed.",
+        post_title: "Hello world!",
+        post_body: "Hello world is the output of the first program that any programmer's learn . It is tradition for programmers .",
         tags: [
             "webdev", "web", "webdesign", "web3"
         ],
