@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
 :root {
     --innerHeight: 100%;
 }
@@ -32,4 +33,8 @@ code {
 
 .vh-100-2rem {
     height: calc(100vh - 2rem);
+}
+
+.font-Cairo {
+    font-family: 'Cairo', sans-serif;
 }

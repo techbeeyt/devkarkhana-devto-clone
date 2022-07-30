@@ -24,6 +24,7 @@ const Header = () => {
 
     useEffect(() => {
         setSearchText(search_query);
+        // eslint-disable-next-line
     },[])
 
     const [showProfile, setShowProfile] = useState(false);
@@ -82,7 +83,8 @@ const Header = () => {
             <button onClick={() => navigate(`/search`)} className="relative flex md:hidden lg:hidden justify-center items-center mr-2 h-10 w-10 hover:bg-purple-100 hover:text-indigo-600 rounded-md">
                 <CgSearch size={26}/>
             </button>
-            <button className="hidden md:block lg:block font-semibold text-indigo-600 px-4 py-2 mx-2 border border-indigo-600 rounded-md hover:bg-indigo-600 hover:text-white hover:underline">
+            <button className="hidden md:block lg:block font-semibold text-indigo-600 px-4 py-2 mx-2 border border-indigo-600 rounded-md hover:bg-indigo-600 hover:text-white hover:underline"
+            onClick={() => navigate('/create-new-post')}>
                 Create Post
             </button>
             <button className="relative flex justify-center items-center mr-2 h-10 w-10 hover:bg-purple-100 hover:text-indigo-600 rounded-md">
@@ -126,10 +128,13 @@ const Header = () => {
                 }}>
                 <div className={`${showProfileClass} transition-all delay-300 duration-100 ease-in absolute bg-white vw-100-1rem md:w-64 lg:w-64 shadow-lg rounded-md top-2 lg:top-0 md:right-6 lg:right-28 border border-gray-300 p-2 pointer-events-auto`}>
                     <HoverDiv>
-                        <Link to='/profile'>
+                        <div onClick={() => {
+                            profileClicked();
+                            navigate('/profile');
+                        }}>
                             <h1 className="font-semibold text-gray-600 group-hover:text-indigo-800 group-hover:underline text-lg">Fahadh Fassil</h1>
                             <span className="text-gray-400 group-hover:text-indigo-800 group-hover:underline text-sm">@fahadhfassil</span>
-                        </Link>
+                        </div>
                     </HoverDiv>
                     <div className="h-0 w-full border-b border-gray-300 my-2"></div>
                     <HoverDiv>
