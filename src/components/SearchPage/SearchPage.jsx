@@ -30,6 +30,12 @@ const SearchPage = () => {
             case 'posts': 
                 {
                     setFeed(posts);
+                    break;
+                }
+            
+            default:  
+                {
+                    setFeed(posts);
                 }
         }
     },[param])
@@ -68,17 +74,27 @@ const SearchPage = () => {
                     <div className="w-full md:w-3/4 lg:w-3/4">
                         {
                             feed.map(item => {
-                                console.log(item);
                                 if(filter === 'posts'){
-                                    console.log(item.post_body.includes(searchQuery));
                                     if(item.post_body.toLowerCase().includes(searchQuery.toLowerCase())){
                                         return <BlogContainer post={item} />
                                     }
                                     else {
                                         return null;
                                     }
-                                }else {
-                                    return null;
+                                }else if(filter === 'podcasts'){
+                                    return <div className="rounded-md overflow-hidden mb-2 bg-white border border-gray-300 active:outline active:outline-3 active:outline-indigo-600 flex justify-center items-center py-8">No podcasts found with this query</div>
+                                }
+                                else if(filter === 'people'){
+                                    return <div className="rounded-md overflow-hidden mb-2 bg-white border border-gray-300 active:outline active:outline-3 active:outline-indigo-600 flex justify-center items-center py-8">No people found with this query</div>
+                                }
+                                else if(filter === 'tags'){
+                                    return <div className="rounded-md overflow-hidden mb-2 bg-white border border-gray-300 active:outline active:outline-3 active:outline-indigo-600 flex justify-center items-center py-8">No tags found with this query</div>
+                                }
+                                else if(filter === 'comments'){
+                                    return <div className="rounded-md overflow-hidden mb-2 bg-white border border-gray-300 active:outline active:outline-3 active:outline-indigo-600 flex justify-center items-center py-8">No comments found with this query</div>
+                                }
+                                else if(filter === 'my-posts-only'){
+                                    return <div className="rounded-md overflow-hidden mb-2 bg-white border border-gray-300 active:outline active:outline-3 active:outline-indigo-600 flex justify-center items-center py-8">No my-posts-only found with this query</div>
                                 }
                             })
                         }
