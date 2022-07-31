@@ -27,7 +27,7 @@ const Profile = () => {
           <div className="constent">
             <h1 className="name">Sujon Ali</h1>
             <p className="bio">404 Bio not found</p>
-            <p>Joined on Jul 8, 2022</p>
+            <p>You have Joined on Jul 8, 2022</p>
           </div>
         </div>
 
