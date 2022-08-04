@@ -87,10 +87,10 @@ const Header = () => {
             onClick={() => navigate('/create-new-post')}>
                 Create Post
             </button>
-            <button className="relative flex justify-center items-center mr-2 h-10 w-10 hover:bg-purple-100 hover:text-indigo-600 rounded-md">
+            <Link to="/notifications" className="relative flex justify-center items-center mr-2 h-10 w-10 hover:bg-purple-100 hover:text-indigo-600 rounded-md">
                 <RiNotification3Line size={26} />
-            </button>
-            <div className="relative cursor-pointer">
+            </Link>
+            <div className="relative">
                 <div className={`${isPClicked} h-8 w-8 mx-2 rounded-full bg-slate-200 hover:outline hover:outline-4 hover:outline-indigo-200 overflow-hidden`}  
                 onClick={(e) => {
                         profileClicked();
