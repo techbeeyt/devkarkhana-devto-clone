@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
+import { Link, NavLink, Outlet } from 'react-router-dom';
 import './notifications.css'
 const Notifications = () => {
   return (
@@ -17,7 +17,7 @@ const Notifications = () => {
           </div>
         </div>
         <div className='w-full h-60 flex flex-col items-end'>
-          <NavLink to='/settings' className='w-fit my-6 py-2 px-4 border-0 text-gray-700 font-normal cursor-move'>Settings</NavLink>
+          <Link to='/settings' className='w-fit my-6 py-2 px-4 border-0 text-gray-700 font-normal cursor-move'>Settings</Link>
           <Outlet />
         </div>
       </div>
