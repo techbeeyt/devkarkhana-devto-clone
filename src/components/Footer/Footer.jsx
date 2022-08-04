@@ -1,17 +1,15 @@
-import "../Dashboard/Dashboard.css";
-
 const Footer = () => {
   return (
-    <div className="footer p-5">
-      <p>
+    <div className="bg-gray-200 flex justify-center items-center flex-col py-4 w-full px-4 mt-auto">
+      <p className="text-gray-700">
         DEV Community — A constructive and inclusive social network for software
         developers. With you every step of your journey.
       </p>
-      <p>
+      <p className="text-gray-700">
         Built on Forem — the open source software that powers DEV and other
-        inclusive communities.
+        inclusive communities.s
       </p>
-      <p>Made with love and Ruby on Rails. DEV Community © 2016 - 2022.</p>
+      <p className="text-gray-700">Made with love and Ruby on Rails. DEV Community © 2016 - 2022.</p>
       <div>
         <svg
           xmlns="http://www.w3.org/2000/svg"

@@ -1,7 +1,7 @@
 import "./Dashboard.css";
 import { Link } from "react-router-dom";
 import Footer from "../Footer/Footer";
-import { MdArrowBackIosNew } from 'react-icons/md'
+import { MdArrowBackIosNew } from "react-icons/md";
 
 const Dashboard = () => {
   return (
@@ -106,7 +106,7 @@ const Dashboard = () => {
                 anything yet.
               </p>
               <p>
-                <Link to="/dashboard">
+                <Link to="/create-new-post">
                   <button className="rounded-full btn bg-blue-500">
                     Write your first post now
                   </button>
