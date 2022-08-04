@@ -6,10 +6,15 @@ import Notifications from './components/Notifications/Notifications';
 import All from './components/Notifications/All';
 import Comments from './components/Notifications/Comments';
 import Post from './components/Notifications/Post';
+import Profile from "./components/Profile/Profile";
+import Dashboard from "./components/Dashboard/Dashboard";
+import SearchPage from "./components/SearchPage/SearchPage";
+import Readinglist from './components/ReadingList/Readinglist';
+import CreatePost from "./components/CreatePost/CreatePost";
 
 const App = () => {
   return (
-    <>
+    <div className="min-h-screen">
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -20,8 +25,13 @@ const App = () => {
           <Route path='comments' element={ <Comments/>} />
           <Route path='posts' element={ <Post/>} />
         </Route>
+        <Route path="/search" element={<SearchPage />} />
+        <Route path="/create-new-post" element={<CreatePost />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/readinglist" element={<Readinglist />} />
+        <Route path="/:username" element={<Profile />} />
       </Routes>
-    </>
+    </div>
   );
 };
 
