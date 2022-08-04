@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Filter = ({ item, selected, setSelect }) => {
-    console.log({ item, selected, setSelect });
     setSelect(item.id);
     // eslint-disable-next-line
     const [filter, setFilter] = useState('');
