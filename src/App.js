@@ -11,6 +11,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import SearchPage from "./components/SearchPage/SearchPage";
 import Readinglist from './components/ReadingList/Readinglist';
 import CreatePost from "./components/CreatePost/CreatePost";
+import Podcast from './components/Podcast/Podcast';
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/readinglist" element={<Readinglist />} />
         <Route path="/:username" element={<Profile />} />
+        <Route path="/podcast" element={<Podcast />} />
       </Routes>
     </div>
   );
