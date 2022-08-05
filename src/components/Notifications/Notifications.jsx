@@ -17,7 +17,7 @@ const Notifications = () => {
           </div>
         </div>
         <div className='w-full h-60 flex flex-col items-end'>
-          <Link to='/settings' className='w-fit my-6 py-2 px-4 border-0 text-gray-700 font-normal cursor-move'>Settings</Link>
+          <Link to='/settings' className='w-fit my-6 py-2 px-4 border-0 text-gray-700 font-normal cursor-pointer rounded-lg hover:bg-gray-200 hover:text-black'>Settings</Link>
           <Outlet />
         </div>
       </div>
