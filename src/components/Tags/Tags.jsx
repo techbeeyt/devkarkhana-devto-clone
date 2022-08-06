@@ -3,7 +3,8 @@ import { CgSearch } from 'react-icons/cg';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { setSearchQuery } from '../../store/AppState';
-
+import { tags } from '../../assets/database/tags';
+import TagCard from './TagCard';
 const Tags = () => {
   const location = useLocation();
   const param = new URLSearchParams(location.search);
@@ -17,7 +18,7 @@ const Tags = () => {
   }, []);
   return (
     <div className='min-h-screen w-full'>
-      <div className='w-4/5 mx-auto'>
+      <div className='w-full lg:w-5/6 mx-auto'>
         <div className='w-full flex justify-between items-center pt-4 mb-6'>
           <h1 className='text-black text-2xl sm:text-3xl font-bold'>Top Tags</h1>
           <div className='flex flex-row'>
@@ -42,8 +43,12 @@ const Tags = () => {
             <Link to='/settings' className='w-fit mr-4 border-0 text-gray-700 font-normal cursor-pointer rounded-lg hover:bg-gray-200 hover:text-black'>Following Tags</Link>
           </div>
         </div>
-        <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-
+        <div className='w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6'>
+          {
+            tags.map(tag => {
+              return <TagCard key={tag.id} tag={tag} />
+            })
+          }
         </div>
       </div>
     </div>
