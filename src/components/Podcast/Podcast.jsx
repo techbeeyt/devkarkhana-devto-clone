@@ -9,7 +9,7 @@ const Podcast = () => {
   console.log(episodes);
   return (
     <div className='w-full min-h-screen'>
-      <div className='w-full lg:w-5/6 px-2 lg:px-4 mx-auto h-80'>
+      <div className='w-full lg:w-5/6 px-2 lg:px-4 mx-auto'>
         <div className='w-full flex justify-between items-center pt-4 mb-6'>
           <h1 className='text-black text-2xl sm:text-3xl font-bold'>Podcasts</h1>
           <Link to='/settings' className='w-fit mr-4 border-0 text-gray-700 font-normal cursor-pointer rounded-lg hover:bg-gray-200 hover:text-black'>Suggest a Podcast</Link>
