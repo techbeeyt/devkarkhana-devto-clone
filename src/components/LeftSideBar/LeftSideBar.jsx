@@ -67,7 +67,7 @@ const LeftSideBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link  to='/' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
+                    <Link  to='/tags' className="pl-2 hover:text-indigo-700 pr-6 hover:bg-purple-200 hover:underline rounded-md flex justify-start items-center py-2 gap-2">
                         <img src={Tags} alt="home"/>
                         <span>Tags</span>
                     </Link>
