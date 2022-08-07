@@ -53,7 +53,7 @@ export const tags = [
     name: 'productivity',
     title: 'Productivity includes tips on how to use tools and software, process optimization, useful references, experience, and mindstate optimization.',
     pub: 29231,
-    col: '#ffffff'
+    col: '#2a0798'
   },
   {
     id: 9,
@@ -61,5 +61,26 @@ export const tags = [
     title: 'Cascading Style Sheets (CSS) is a simple language for adding style (e.g., fonts, colors, spacing) to HTML documents. It describes how HTML ',
     pub: 21231,
     col: '#2965f1'
+  },
+  {
+    id: 10,
+    name: 'discuss',
+    title: 'What color should the bike shed be?',
+    pub: 20455,
+    col: '#1ad643'
+  },
+  {
+    id: 11,
+    name: 'devops',
+    title: 'Content centering around the shifting left of responsibility, deconstruction of responsibility silos, and the automation of repetitive work tasks.',
+    pub: 18411,
+    col: '#06b500'
+  },
+  {
+    id: 12,
+    name: 'career',
+    title: 'This tag is for anything relating to careers! Job offers, workplace conflict, interviews, resumes, promotions, etc.',
+    pub: 18231,
+    col: '#2a2566'
   },
 ]
